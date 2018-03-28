@@ -1,0 +1,127 @@
+body, html { height: 100%; }
+
+.bubble {
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+  transform: translate3d(-800px, 0, 0);
+  background: #fefefe;
+  transition: transform 0.85s cubic-bezier(0.68, 0.01, 0.245, 1.13) 0.35s,color 0.3s ease-in-out 0.25s,min-width 0.35s ease-in-out,min-height 0.35s ease-in-out;
+  display: inline-block;
+  line-height: 1.45em;
+  border-radius: 3px;
+  margin: 0 0 1em 0;
+  text-align: left;
+  position: relative;
+  padding: 6px 12px;
+  font-size: 19px;
+  border: none;
+  max-width: 90%;
+  min-width: 44px;
+  min-height: 12px;
+}
+
+.bubble--inview {
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+  transform: translate3d(0px, 0, 0);
+  background: #fefefe;
+  transition: transform 0.85s cubic-bezier(0.68, 0.01, 0.245, 1.13) 0.35s,color 0.3s ease-in-out 0.25s,min-width 0.35s ease-in-out,min-height 0.35s ease-in-out;
+  display: inline-block;
+  line-height: 1.45em;
+  border-radius: 3px;
+  margin: 0 0 1em 0;
+  text-align: left;
+  position: relative;
+  padding: 6px 12px;
+  font-size: 19px;
+  border: none;
+  max-width: 90%;
+  min-width: 44px;
+  min-height: 12px;
+}
+
+.bubble.slidein {
+  transform: translate3d(0, 0, 0)
+}
+
+.bubble, .bubble * {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.bubble--typing:before {
+  content: '...';
+  color: #000;
+  display: inline;
+}
+
+.bubble--typing>* {
+  display: none;
+}
+
+.bubble--typing:after {
+  animation: loading 1s infinite;
+  color: rgba(255,255,255,0.5);
+  content: '.';
+  position: absolute;
+  left: 0px;
+  display: inline;
+}
+
+.bubble--fade,
+.bubble--fade:before {
+  animation: font-fade .75s ease-in-out;
+}
+
+@keyframes font-fade {
+  50% {
+      color: transparent
+  }
+
+  100% {
+      color: "inherit"
+  }
+}
+
+@keyframes loading {
+  0% {
+      left: 12px
+  }
+
+  33.3331% {
+      left: 12px
+  }
+
+  33.3333% {
+      left: 17px
+  }
+
+  66.6661% {
+      left: 17px
+  }
+
+  66.6666% {
+      left: 21px
+  }
+
+  99.99% {
+      left: 21px
+  }
+
+  100% {
+      left: 12px
+  }
+}
+
+@keyframes item-fade {
+  0% {
+      opacity: 0
+  }
+
+  80% {
+      opacity: 0
+  }
+
+  100% {
+      opacity: 1
+  }
+}
