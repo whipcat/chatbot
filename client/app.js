@@ -1,6 +1,5 @@
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import App from './components/app'
-import About from './components/about'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
@@ -29,17 +28,9 @@ export default () => (
               <Link className='nav-link' to='/'><span className='sr-only' />home</Link>
             </a>
 
-            <div className='collapse navbar-collapse' id='navbarNav'>
-              <ul className='navbar-nav'>
-                <li className='nav-item'>
-                  <Link className='nav-link' to='/about'><span className='sr-only' />About</Link>
-                </li>
-              </ul>
-            </div>
           </nav>
 
           <Route exact path='/' component={App} />
-          <Route path='/about' component={About} />
 
         </div>
       </Router>
